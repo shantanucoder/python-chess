@@ -8,9 +8,11 @@ import subprocess
 
 
 def system(command):
-    print(command)
+    """Execute a system command and exit if it fails."""
+    print(f"Executing: {command}")
     exit_code = os.system(command)
     if exit_code != 0:
+        print(f"Command failed with exit code {exit_code}. Exiting.")
         sys.exit(exit_code)
 
 
